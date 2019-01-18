@@ -16,7 +16,7 @@
         <textarea class="form-control" rows="10" name="comment" disabled>{{$blog->description}}</textarea>
       </div>
 
-    <a href="/blogs/{{$blog->id}}/edit">Edit</a>
+    
      
     </div>
 
@@ -74,7 +74,8 @@
 
   </div>
 
-  <br> @endforeach @endif {{$commentsForPaginate->links()}}
+  <br> @endforeach @endif 
+  {{--   --}}
 
 </div>
 

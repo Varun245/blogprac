@@ -7,7 +7,7 @@
 <div class="container-fluid">
 
   <div class="card">
-
+d
     <h5 class="card-header">{{$blog->title}}</h5>
 
     <div class="card-body">
@@ -16,14 +16,14 @@
         <textarea class="form-control" rows="10" name="comment" disabled>{{$blog->description}}</textarea>
       </div>
 
-    <a href="/blogs/{{$blog->id}}/edit">Edit</a>
+    {{-- <a href="/blogs/{{$blog->id}}/edit">Edit</a> --}}
      
     </div>
 
   </div>
 
   <br>
-  <div class="card">
+  {{-- <div class="card">
 
     <h5 class="card-header">Leave a Comment</h5>
 
@@ -55,9 +55,9 @@
       </div>
     </form>
 
-  </div>
+  </div> --}}
 
-  <br> @if($blog->comments->count()) @foreach ($commentsForPaginate as $comment)
+  <br> @foreach ($comments as $comment)
   <div class="card">
 
     <h5 class="card-header">{{$comment->name}}</a><br>
@@ -67,14 +67,15 @@
     <div class="card-body">
 
       <div class="form-group">
-        <textarea class="form-control" rows="2" name="comment" disabled>{{$comment->comment}}</textarea>
+        <textarea class="form-control" rows="2" name="comment" disabled>{{$comment$->comment}}</textarea>
       </div>
 
     </div>
 
   </div>
 
-  <br> @endforeach @endif {{$commentsForPaginate->links()}}
+  <br> @endforeach  
+  {{-- {{$commentsForPaginate->links()}} --}}
 
 </div>
 
